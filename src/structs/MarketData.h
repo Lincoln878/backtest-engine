@@ -7,6 +7,21 @@
 
 namespace mkdt {
     class MarketData {
+        MarketData(double open, double close, double high, double low);
+        MarketData(const MarketData& other);
+        MarketData& operator=(const MarketData& other);
+        MarketData(const MarketData&& other) noexcept;
+        MarketData& operator=(MarketData&& other) noexcept;
+
+        double open() const;
+        double close() const;
+        double high() const;
+        double low() const;
+    private:
+        double _open;
+        double _close;
+        double _high;
+        double _low;
     };
 } // mkdt
 
